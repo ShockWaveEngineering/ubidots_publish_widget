@@ -8,7 +8,12 @@ ubidots.on('receivedToken', function (data)
 	
 });
 
-AddListeners();
+window.addEventListener("load", function()
+{
+    AddListeners();
+});
+
+
 
 function AddListeners()
 {
