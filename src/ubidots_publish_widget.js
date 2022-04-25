@@ -5,9 +5,7 @@ ubidots.on('receivedToken', function (data)
 {
 	TOKEN = data;
 	console.log("Received Token");
-
-	//try initialise local variables
-	InitialiseElements();	
+	
 });
 
 
