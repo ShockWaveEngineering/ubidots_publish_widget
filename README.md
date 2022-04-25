@@ -1,7 +1,7 @@
 # ubidots_publish_widget
 
-<script src='https://cdn.jsdelivr.net/gh/ShockWaveEngineering/ubidots_publish_widget@0.1.2/src/ubidots_publish_widget.js'></script>
-<link href='https://cdn.jsdelivr.net/gh/ShockWaveEngineering/ubidots_publish_widget@0.1.2/src/ubidots_publish_widget.css' rel='stylesheet' />
+<script src='https://cdn.jsdelivr.net/gh/ShockWaveEngineering/ubidots_publish_widget@0.1.4/src/ubidots_publish_widget.js'></script>
+<link href='https://cdn.jsdelivr.net/gh/ShockWaveEngineering/ubidots_publish_widget@0.1.4/src/ubidots_publish_widget.css' rel='stylesheet' />
 
 
 

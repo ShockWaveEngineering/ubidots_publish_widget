@@ -1,3 +1,6 @@
+"use strict";
+
+
 var TOKEN = "null"; //retrieved at runtime
 
 var ubidots = new Ubidots();
@@ -23,7 +26,7 @@ function AddListeners()
 
 function PublishVariable()
 {
-	console.log("PublishVariable");
+	//console.log("PublishVariable");
 
     //default values
     var _deviceApiLabel = ""; //specified by test input
@@ -38,15 +41,15 @@ function PublishVariable()
     _variableContext = JSON.parse(document.getElementById('variableContext').value);
 
     //print to console
-    console.log("deviceApiLabel: " + _deviceApiLabel);
-    console.log("variableApiLabel: " + _variableApiLabel);
-    console.log("variableValue: " + _variableValue);
-    console.log("variableContext: " + JSON.stringify(_variableContext));
+    //console.log("deviceApiLabel: " + _deviceApiLabel);
+    //console.log("variableApiLabel: " + _variableApiLabel);
+    //console.log("variableValue: " + _variableValue);
+    //console.log("variableContext: " + JSON.stringify(_variableContext));
 
 
     if(_deviceApiLabel == "" || _variableApiLabel == "")
     {
-        console.log("Device API Label or Variable API Label not set");
+        //console.log("Device API Label or Variable API Label not set");
         return;
     }
 
