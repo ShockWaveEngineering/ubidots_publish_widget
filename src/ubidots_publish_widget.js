@@ -13,29 +13,31 @@ ubidots.on('receivedToken', function (data)
 function PublishVariable()
 {
     //default values
-    var deviceApiLabel = "null"; //specified by test input
-    var variableApiLabel = "null"; //specified by test input
-    var variableValue = 0;
-    var variableContext = "";
+    var _deviceApiLabel = ""; //specified by test input
+    var _variableApiLabel = ""; //specified by test input
+    var _variableValue = 0;
+    var _variableContext = "";
 
     //try get values from the DOM
-    deviceApiLabel = document.getElementById('deviceApiLabel').value;
-    variableApiLabel = document.getElementById('variableApiLabel').value;
-    variableValue = document.getElementById('variableValue').value;
-    variableContext = document.getElementById('variableContext').value;
+    _deviceApiLabel = document.getElementById('deviceApiLabel').value;
+    _variableApiLabel = document.getElementById('variableApiLabel').value;
+    _variableValue = document.getElementById('variableValue').value;
+    _variableContext = document.getElementById('variableContext').value;
 
     //print to console
-    console.log("deviceApiLabel: " + deviceApiLabel);
-    console.log("variableApiLabel: " + variableApiLabel);
-    console.log("variableValue: " + variableValue);
-    console.log("variableContext: " + variableContext);
+    console.log("deviceApiLabel: " + _deviceApiLabel);
+    console.log("variableApiLabel: " + _variableApiLabel);
+    console.log("variableValue: " + _variableValue);
+    console.log("variableContext: " + _variableContext);
 
 
-    if(deviceApiLabel == "null" || variableApiLabel == "null")
+    if(_deviceApiLabel == "" || _variableApiLabel == "")
     {
         console.log("Device API Label or Variable API Label not set");
         return;
     }
+
+    UploadVariableToUbidots(_deviceApiLabel, _variableApiLabel, _variableValue, _variableContext);
 }
 
 
@@ -45,7 +47,7 @@ function PublishVariable()
 
 
 
-function UploadVariableToUbidots(variableApiLabel, variableValue, variableContext)
+function UploadVariableToUbidots(deviceApiLabel, variableApiLabel, variableValue, variableContext)
 {
 	var url = "https://industrial.api.ubidots.com/api/v1.6/devices/" + deviceApiLabel + "/";
 	var headers = {'Content-Type' : 'application/json', 'X-Auth-Token' : TOKEN};
