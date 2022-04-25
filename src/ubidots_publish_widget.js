@@ -8,10 +8,18 @@ ubidots.on('receivedToken', function (data)
 	
 });
 
+AddListeners();
+
+function AddListeners()
+{
+	document.getElementById("publishButton").addEventListener("click", PublishVariable);
+}
 
 
 function PublishVariable()
 {
+	console.log("PublishVariable");
+
     //default values
     var _deviceApiLabel = ""; //specified by test input
     var _variableApiLabel = ""; //specified by test input
@@ -22,13 +30,13 @@ function PublishVariable()
     _deviceApiLabel = document.getElementById('deviceApiLabel').value;
     _variableApiLabel = document.getElementById('variableApiLabel').value;
     _variableValue = document.getElementById('variableValue').value;
-    _variableContext = document.getElementById('variableContext').value;
+    _variableContext = JSON.parse(document.getElementById('variableContext').value);
 
     //print to console
     console.log("deviceApiLabel: " + _deviceApiLabel);
     console.log("variableApiLabel: " + _variableApiLabel);
     console.log("variableValue: " + _variableValue);
-    console.log("variableContext: " + _variableContext);
+    console.log("variableContext: " + JSON.stringify(_variableContext));
 
 
     if(_deviceApiLabel == "" || _variableApiLabel == "")
